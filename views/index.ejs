@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="wrapper">
+
+
+
+
+        <% if (locals.fileLink != null) { %>
+            <div>
+                Your file is uploaded
+                <a  href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+            </div>
+        <% } %>
+
+        <h1>Share the file!</h1>
+
+        <form action="/upload" method="post"     enctype="multipart/form-data">
+
+
+            <div class="file-select">
+                <input type="file" id="file" name="file" required>
+                <label for="file"><i class="fa-solid fa-upload"></i> Upload File</label>
+                <!-- <i class='bx bxs-file-image bx-flip-horizontal' ></i> -->
+            </div>
+
+            <div class="file-select">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <!-- <i class='bx bxs-lock-alt'></i> -->
+            </div>
+            
+            <button class="btn" type="submit">Share</button>
+        </form>
+
+
+
+    </div>
+    
+</body>
+</html>
